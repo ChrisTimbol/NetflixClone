@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useEffect } from 'react';
-
+import NavSignin from '../components/NavSignin'
 export async function getStaticProps() {
 
   const res = await fetch('https://api.themoviedb.org/3/movie/550?api_key=41ea7284a9159436457db40fae4eadda')
@@ -28,7 +28,7 @@ export default function Home(props) {
         <title>Netflix Clone</title>
         <meta name="description" content="Netflix Clone Project" />
       </Head>
-
+      <NavSignin/>
       <div className="relative flex items-center justify-center h-82vh  border-b-8 border-stone-600 bg-black bg-gradient-to-b">
 
         <Image className="z-0 " layout='fill' objectFit="cover" src="/LandingPage/landingBackground.jpg" />
