@@ -14,14 +14,14 @@ export default function Navbar() {
 
                 <div className="linkContainer flex list-none ">
                     <li>
-                        <select className="bg-zinc-800/60 px-2 py-2 rounded-md text-white m-4" name="languageMenu">
+                        <select className="bg-zinc-800/60 px-2 py-2 rounded text-white m-4" name="languageMenu">
                             <option value="English">English</option>
-                            <option  value="Spanish">Spanish</option>
-
+                            <option  value="Espanol">Espanol</option>
+        
                         </select>
                     </li>
                     <li>
-                      <button  className="bg-red-500 px-5 py-2 rounded-md text-white m-4"> Sign In</button> 
+                      <button  className="bg-red-600 px-6 py-2 rounded text-white m-4"> Sign In</button> 
                     </li>
                 </div>
 
