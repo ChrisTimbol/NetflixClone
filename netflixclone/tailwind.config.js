@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -15,10 +17,11 @@ module.exports = {
 			"60vh": "60vh",
 			"70vh": "70vh",
 			"82vh": "82vh",
-      "85vh": "85vh",
+      		"85vh": "85vh",
 			"90vh": "90vh",
 			"100vh": "100vh",
 		},
+
   },
   plugins: [],
 }

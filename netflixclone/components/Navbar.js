@@ -5,7 +5,7 @@ export default function Navbar() {
     return (
         <>
 
-            <div className="Navbar flex justify-between">
+            <div className="Navbar flex justify-between absolute left-0 right-0 z-10 ">
 
 
                 <div className="navTitle " >
@@ -13,11 +13,10 @@ export default function Navbar() {
                 </div>
 
                 <div className="linkContainer flex list-none ">
-                    <li>
+                    <li >
                         <select className="bg-zinc-800/60 px-2 py-2 rounded text-white m-4" name="languageMenu">
                             <option value="English">English</option>
                             <option  value="Espanol">Espanol</option>
-        
                         </select>
                     </li>
                     <li>
