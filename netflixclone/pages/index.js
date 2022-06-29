@@ -3,18 +3,6 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useEffect } from 'react';
 import NavSignin from '../components/NavSignin'
-export async function getStaticProps() {
-
-  const res = await fetch('https://api.themoviedb.org/3/movie/550?api_key=41ea7284a9159436457db40fae4eadda')
-  const posts = await res.json()
-
-
-  return {
-    props: {
-      posts
-    }
-  }
-}
 
 
 export default function Home(props) {
@@ -31,7 +19,7 @@ export default function Home(props) {
       <NavSignin/>
       <div className="relative flex items-center justify-center h-82vh  border-b-8 border-stone-600 bg-black bg-gradient-to-b">
 
-        <Image className="z-0 " layout='fill' objectFit="cover" src="/LandingPage/landingBackground.jpg" />
+        <Image className="z-0 " layout='fill' objectFit="cover" priority={true} src="/LandingPage/landingBackground.jpg" />
 
         <div className="story-card-text  relative text-white text-center  " >
           <h1 className="story-card-title text-5xl font-bold">Unlimited movies, TV shows, and more.</h1>
@@ -75,19 +63,19 @@ export default function Home(props) {
         <h1 className="our-story-card text-4xl pt-5"> Frequently Asked Questions</h1>
         <ul>
           <li className="faq-list-item">
-            <button class="faq-question">What is Netflix?</button>
+            <button className="faq-question">What is Netflix?</button>
           </li>
           <li className="faq-list-item">
-            <button class="faq-question">How much does Netflix cost?</button>
+            <button className="faq-question">How much does Netflix cost?</button>
           </li>
           <li className="faq-list-item">
-            <button class="faq-question">Where can I watch?</button>
+            <button className="faq-question">Where can I watch?</button>
           </li>
           <li className="faq-list-item">
-            <button class="faq-question">What can I watch on Netflix?</button>
+            <button className="faq-question">What can I watch on Netflix?</button>
           </li>
           <li className="faq-list-item">
-            <button class="faq-question">Is Netflix good for kids?</button>
+            <button className="faq-question">Is Netflix good for kids?</button>
           </li>
         </ul>
       <form className="border-b-8 border-stone-600">
