@@ -2,24 +2,20 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useEffect } from 'react';
-import NavSignin from '../components/NavSignin'
 
 
 export default function Home(props) {
 
-  useEffect(() => {
-    console.log(props)
-  })
+
   return (
     <div className={styles.container}>
       <Head>
         <title>Netflix Clone</title>
         <meta name="description" content="Netflix Clone Project" />
       </Head>
-      <NavSignin/>
       <div className="relative flex items-center justify-center h-82vh  border-b-8 border-stone-600 bg-black bg-gradient-to-b">
 
-        <Image className="z-0 " layout='fill' objectFit="cover" priority={true} src="/LandingPage/landingBackground.jpg" />
+        <Image className="z-0 " layout='fill'  quality={100}  objectFit="cover" priority={true} src="/LandingPage/landingBackground.jpg" />
 
         <div className="story-card-text  relative text-white text-center  " >
           <h1 className="story-card-title text-5xl font-bold">Unlimited movies, TV shows, and more.</h1>

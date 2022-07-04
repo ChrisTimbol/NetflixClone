@@ -1,11 +1,13 @@
 import '../styles/globals.css'
-import NavBrand from '../components/NavBrand'
-
+import Navbar from '../components/Navbar'
+import { AuthContextProvider } from '../context/AuthContext'
 function MyApp({ Component, pageProps }) {
   return (
     <>
-       <NavBrand /> 
+    <AuthContextProvider> 
+       <Navbar /> 
       <Component {...pageProps} />
+       </AuthContextProvider>
     </>
   )
 }

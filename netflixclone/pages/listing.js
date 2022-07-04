@@ -1,23 +1,51 @@
+import { useEffect, useState } from "react"
+import Image from 'next/image'
+import Link from 'next/link'
+import ListingHeader from '../components/ListingHeader'
+import Row from '../components/Row'
+import requests from '../apiRequest/requests'
 export async function getStaticProps() {
-    const apiKey = "41ea7284a9159436457db40fae4eadda"
-    const res = await fetch('https://api.themoviedb.org/3/movie/550?api_key=41ea7284a9159436457db40fae4eadda')
-    const posts = await res.json()
+    const res1 = await fetch(requests.popular)
+    const post1 = await res1.json()
 
+    const res2 = await fetch(requests.upcoming)
+    const post2 = await res2.json()
 
+    const res3 = await fetch(requests.Drama)
+    const post3 = await res3.json()
+
+    const res4 = await fetch(requests.Horror)
+    const post4 = await res4.json()
+
+    const res5 = await fetch(requests.Comedy)
+    const post5 = await res5.json()
     return {
         props: {
-            posts
+            post1,
+            post2,
+            post3,
+            post4,
+            post5,
         }
     }
 }
-
+// test endpoints b4 row
 
 function listing(props) {
+
     return (
         <>
-        {console.logposts}
+            <div className="bg-zinc-900 ">
+
+            <ListingHeader movie={props.post1.results} />
+            <Row rowID='1' title="Popular" movies={props.post1.results} />
+            <Row rowID='2' title="Up Coming" movies={props.post2.results} />
+            <Row rowID='3' title="Drama" movies={props.post3.results} />
+            <Row rowID='4' title="Horror " movies={props.post4.results} />
+            <Row rowID='5' title="Comedy" movies={props.post5.results} />
+            </div>
         </>
     )
 }
 
-export default MovieListings
+export default listing
