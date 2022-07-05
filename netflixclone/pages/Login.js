@@ -19,7 +19,7 @@ export default function login() {
                             <form method="post" className="rounded w-full flex flex-col  login-form text-white py-4 ">
 
                                 <input className="mb-2 p-4 bg-zinc-700" type="email" id="email" placeholder="Email Address" name="email" />
-                                <input className="p-4 bg-zinc-700" type="password" placeholder="Password" name="password" value="" autoComplete="password" />
+                                <input className="p-4 bg-zinc-700" type="password" placeholder="Password" name="password"  autoComplete="password" />
                                 <button
                                     className="cursor-pointer py-3 my-6 font-bold bg-red-600"
                                     type="submit">Sign In</button>

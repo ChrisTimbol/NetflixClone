@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 export default function ListingHeader(props) {
     const [movies, setMovies] = useState([])
     const movie = movies[Math.floor(Math.random() * movies.length)]
-
+    let image
     useEffect(() => {
         setMovies(props.movie)
     }, [])
@@ -17,13 +17,16 @@ export default function ListingHeader(props) {
         }
     }
 
+    if(movie?.backdrop_path)  {
+        image = <Image layout='fill' objectFit="cover" quality={100} priority={true} src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`} />
+
+    }
+    
     return (
         <>
             <div className="w-full h-[550px] text-white relative">
                 <div className="absolute w-full h-[550px] bg-gradient-to-r from-black"></div>
-
-                <Image layout='fill' objectFit="cover" quality={100} priority={true} src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`} />
-
+                {image}
                 <div className="absolute w-full top-[20%] p-4 md:p-8">
                     <h1 className='text-3xl md:text-5xl font-bold'>{movie?.title}</h1>
                     <div className="my-4">

@@ -1,20 +1,26 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { UserAuth } from '../context/AuthContext'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+
 export default function signup() {
+    const router = useRouter()
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const { user, signUp } = UserAuth()
-
+    console.log(user?.email)
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             await signUp(email, password)
+            router.push({pathname: '/listing'})
         } catch (error) {
             console.log(error)
         }
     }
+
     return (
         <>
             <div className="relative flex items-center justify-center h-100vh  border-b-8 border-stone-600  bg-gradient-to-b ">
@@ -25,29 +31,30 @@ export default function signup() {
                         <div className="max-w-[320px] mx-auto py-16">
                             <h1 className="text-3xl font-bold text-white" >Sign Up</h1>
 
-                            <form onSubmit={handleSubmit}
+                            <form 
+                                onSubmit={handleSubmit}
                                 className="rounded w-full flex flex-col  login-form text-white py-4 ">
 
-                                <input className="mb-2 p-4 bg-zinc-700"
+                                <input className="mb-2 p-3 bg-zinc-700"
                                     onChange={(e) => setEmail(e.target.value)}
                                     type="email"
                                     placeholder="Email Address"
                                     autoComplete="email"
                                     name="email" />
                                 <input
-                                    className="p-4 bg-zinc-700"
+                                    className="p-3 bg-zinc-700"
                                     onChange={(e) => setPassword(e.target.value)}
                                     type="password"
                                     placeholder="Password"
                                     autoComplete="current-password" />
 
-                                <Link href="/listing">
+                     
                                     <button className="cursor-pointer py-3 my-6 text-center rounded font-bold bg-red-600 group">
-                                        <a>
+                            
                                             Sign Up
-                                        </a>
+                             
                                     </button>
-                                </Link>
+                        
                             </form>
 
                             <div
