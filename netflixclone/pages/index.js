@@ -60,30 +60,30 @@ export default function Home(props) {
 
         <h1 className="our-story-card font-bold block mb-1.5 text-4xl text-white pt-5"> Enjoy on your TV.</h1>
         <h2 className="our-story-card-subtitle text-white text-2xl"> Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</h2>
-        <Image className="" width={640} height={480} src="/LandingPage/tv.png" />
+        <Image alt="Image" className="" width={640} height={480} src="/LandingPage/tv.png" />
       </div>
 
       <div className=" text-center border-b-8 border-stone-600 bg-black pt-5">
         <h1 className="our-story-card font-bold block mb-1.5 text-4xl text-white">Download your shows to watch offline. </h1>
         <h2 className="our-story-card-subtitle text-white text-2xl">Save your favorites easily and always have something to watch.</h2>
-        <Image className="" width={640} height={480} src="/LandingPage/mobile-0819.jpg" />
+        <Image alt="Image" className="" width={640} height={480} src="/LandingPage/mobile-0819.jpg" />
       </div>
 
       <div className="  text-center border-b-8 border-stone-600 bg-black">
 
         <h1 className="our-story-card font-bold block mb-1.5 text-4xl text-white pt-5"> Watch everywhere. </h1>
         <h2 className="our-story-card-subtitle text-white text-2xl">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</h2>
-        <Image className="" width={640} height={480} src="/LandingPage/device-pile.png" />
+        <Image alt="Image" className="" width={640} height={480} src="/LandingPage/device-pile.png" />
       </div>
 
       <div className="  text-center border-b-8 border-stone-600 bg-black">
         <h1 className="our-story-card font-bold block mb-1.5 text-4xl text-white pt-5"> Create profiles for kids.</h1>
         <h2 className="our-story-card-subtitle text-white text-2xl"> Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</h2>
-        <Image className="" width={640} height={480} src="/LandingPage/kids.png" />
+        <Image alt="Image" className="" width={640} height={480} src="/LandingPage/kids.png" />
       </div>
 
       <div className=" text-center bg-black text-white">
-        <h1 className="our-story-card text-4xl pt-5"> Frequently Asked Questions</h1>
+        <h1 alt="Image" className="our-story-card text-4xl pt-5"> Frequently Asked Questions</h1>
         <ul>
           <li className="faq-list-item">
             <button className="faq-question">What is Netflix?</button>
