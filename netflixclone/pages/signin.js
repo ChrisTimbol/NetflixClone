@@ -53,7 +53,7 @@ export default function Signin() {
                                 <button
                                     type="submit"
                                     value="Submit"
-                                    className="cursor-pointer py-3 my-6 text-center rounded font-bold bg-red-600 group"
+                                    className=" hover:bg-red-900 cursor-pointer py-3 my-6 text-center rounded font-bold bg-red-600 group"
                                 >Sign In</button>
 
 

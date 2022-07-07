@@ -38,10 +38,10 @@ export default function Navbar() {
                             
                             <button 
                                    onClick={handleAccount}
-                                    className=" px-2 py-2 rounded text-white m-4 font-bold"> My Fav Shows </button>
+                                    className=" px-2 py-2 rounded text-white m-4 font-bold hover:text-red-600"> My Fav Shows </button>
                         </li>
                         <li>
-                           <button onClick={handleLogout} className="bg-red-600 px-6 py-2 rounded text-white m-4"> Logout</button>
+                           <button onClick={handleLogout} className="bg-red-600 px-6 py-2 rounded text-white m-4 hover:bg-red-900"> Logout</button>
                         </li>
                     </>
                 ) : (
@@ -53,7 +53,7 @@ export default function Navbar() {
                             </select>
                         </li>
                         <li>
-                            <Link href="/signin"><button className="bg-red-600 px-6 py-2 rounded text-white m-4"> Sign In</button></Link>
+                            <Link href="/signin"><button className="hover:bg-red-900 bg-red-600 px-6 py-2 rounded text-white m-4"> Sign In</button></Link>
                         </li>
                     </>
                 )
