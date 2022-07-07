@@ -15,13 +15,11 @@ export default function Signup() {
         e.preventDefault()
         try {
             await signUp(email, password)
+            if(email && password) {
+                router.push({ pathname: '/listing' }) 
+            }
         } catch (error) {
             setError(error.message)
-        }
-        finally {
-            if(user) { 
-                router.push({ pathname: '/listing' }) 
-         } 
         }
     }
 

@@ -15,9 +15,7 @@ export default function Home(props) {
     router.push({ pathname: '/signup' })
 
   }
-/*     useEffect(() => {
-      localStorage.setItem("email", JSON.stringify(email))
-    }, [email]) */
+
 
   return (
     <div className={styles.container}>
