@@ -27,7 +27,7 @@ export default function Home(props) {
       </Head>
       <div className="relative flex items-center justify-center h-82vh  border-b-8 border-stone-600 bg-black bg-gradient-to-b">
 
-        <Image className="z-0 " layout='fill' quality={100} objectFit="cover" priority={true} src="/LandingPage/landingBackground.jpg" />
+        <Image className="z-0 " alt="Image" layout='fill' quality={100} objectFit="cover" priority={true} src="/LandingPage/landingBackground.jpg" />
 
         <div className="story-card-text  relative text-white text-center  " >
           <h1 className="story-card-title text-5xl font-bold">Unlimited movies, TV shows, and more.</h1>

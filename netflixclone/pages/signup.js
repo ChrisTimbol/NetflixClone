@@ -26,7 +26,7 @@ export default function Signup() {
     return (
         <>
             <div className="relative flex items-center justify-center h-100vh  border-b-8 border-stone-600  bg-gradient-to-b ">
-                <Image className="z-0 " quality={100} priority layout='fill' objectFit="cover" src="/LandingPage/landingBackground.jpg" />
+                <Image className="z-0 " alt="Image" quality={100} priority layout='fill' objectFit="cover" src="/LandingPage/landingBackground.jpg" />
                 <div className="bg-black/60 fixed top-0 left-0 w-full h-screen"> </div>
                 <div className="z-10 fixed w-full px-4 py-20">
                     <div className="max-w-[450px] h-[600px] mx-auto bg-black/75">

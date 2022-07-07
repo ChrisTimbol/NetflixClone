@@ -27,7 +27,7 @@ export default function Navbar() {
                 <div 
                     onClick={handleNetflixClick}
                     className="navTitle " >
-                    <Image src="/LandingPage/Netflix_Logo_PMS.png" width={200} height={90} />
+                    <Image alt="Image" src="/LandingPage/Netflix_Logo_PMS.png" width={200} height={90} />
                 </div>
             </div>
             <div className="linkContainer flex list-none absolute right-0 z-10">

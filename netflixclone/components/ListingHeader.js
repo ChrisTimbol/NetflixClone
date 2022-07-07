@@ -18,7 +18,7 @@ export default function ListingHeader(props) {
     }
 
     if(movie?.backdrop_path)  {
-        image = <Image layout='fill' objectFit="cover" quality={100} priority={true} src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`} />
+        image = <Image layout='fill' objectFit="cover" alt="Image" quality={100} priority={true} src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`} />
 
     }
     

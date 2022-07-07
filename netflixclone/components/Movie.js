@@ -4,7 +4,6 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import { UserAuth } from '../context/AuthContext'
 import { db } from '../firebase'
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
-import { NavItem } from 'react-bootstrap'
 function Movie(props) {
     const [like, setLike] = useState(false)
     const [saved, setSaved] = useState(false)
