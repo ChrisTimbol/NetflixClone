@@ -4,7 +4,7 @@ import { UserAuth } from '../context/AuthContext'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-export default function signup() {
+export default function Signup() {
     const router = useRouter()
 
     const [email, setEmail] = useState('')

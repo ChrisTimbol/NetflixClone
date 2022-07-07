@@ -38,7 +38,7 @@ export default function Navbar() {
                             
                             <button 
                                    onClick={handleAccount}
-                                    className=" px-2 py-2 rounded text-white m-4"> Account </button>
+                                    className=" px-2 py-2 rounded text-white m-4 font-bold"> My Fav Shows </button>
                         </li>
                         <li>
                            <button onClick={handleLogout} className="bg-red-600 px-6 py-2 rounded text-white m-4"> Logout</button>

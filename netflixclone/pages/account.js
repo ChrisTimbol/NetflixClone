@@ -6,7 +6,7 @@ import Link from 'next/link'
 import AuthRoute from '../components/AuthRoute'
 import SavedShows from '../components/SavedShows'
 
-export default function account() {
+export default function Account() {
 
 
 
