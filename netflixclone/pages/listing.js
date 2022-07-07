@@ -36,7 +36,6 @@ function listing(props) {
     return (
         <>
             <div className="bg-zinc-900 ">
-
             <ListingHeader movie={props.post1.results} />
             <Row rowID='1' title="Popular" movies={props.post1.results} />
             <Row rowID='2' title="Up Coming" movies={props.post2.results} />
