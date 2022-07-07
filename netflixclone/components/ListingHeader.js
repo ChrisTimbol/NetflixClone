@@ -5,9 +5,9 @@ export default function ListingHeader(props) {
     const [movies, setMovies] = useState([])
     const movie = movies[Math.floor(Math.random() * movies.length)]
     let image
-/*     useEffect(() => {
+    useEffect(() => {
         setMovies(props.movie)
-    }, []) */
+    }, [])
 
     const truncateString = (str, num) => {
         if (str?.length > num) {
