@@ -24,10 +24,8 @@ export default function Signup() {
     
 
     useEffect(() => {
-        if(user){
             router.push({ pathname: '/listing' }) 
-        }
-    }) 
+    }, [user]) 
 
     return (
         <>
