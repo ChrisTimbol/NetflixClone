@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { UserAuth } from '../context/AuthContext'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { onAuthStateChanged } from 'firebase/auth'
-import { auth, db } from '../firebase'
+
 export default function Signup() {
     const router = useRouter()
 
@@ -16,18 +15,17 @@ export default function Signup() {
         e.preventDefault()
         try {
             await signUp(email, password)
-            onAuthStateChanged(auth, (currentUser) => {
-                if(currentUser) {
-                    router.push({ pathname: '/listing' }) 
-                }
-            })
+
         } catch (error) {
             setError(error.message)
         }
-
     }
-    
 
+    useEffect(() => {
+        if(user) {
+            router.push({ pathname: '/listing' }) 
+        } 
+    })
 
     return (
         <>
@@ -50,6 +48,7 @@ export default function Signup() {
                                     onChange={(e) => setEmail(e.target.value)}
                                     type="email"
                                     placeholder="Email Address"
+                                    autoComplete="email"
                                     name="email" 
                                     text={email}
                                 />
@@ -58,7 +57,8 @@ export default function Signup() {
                                     className="p-3 bg-zinc-700"
                                     onChange={(e) => setPassword(e.target.value)}
                                     type="password"
-                                    placeholder="Password"    
+                                    placeholder="Password"
+                                    autoComplete="current-password" 
                                 />
 
                                 <button
