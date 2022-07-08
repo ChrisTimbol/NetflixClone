@@ -34,7 +34,7 @@ export default function Navbar() {
       
                 {user?.email ? (
                     <>
-                        <li >
+                        <li className='z-20' >
                             
                             <button 
                                    onClick={handleAccount}
@@ -46,8 +46,8 @@ export default function Navbar() {
                     </>
                 ) : (
                     <>
-                        <li >
-                            <select className="z-20 bg-zinc-800/60 px-2 py-2 rounded text-white m-4" name="languageMenu">
+                        <li  className="z-20">
+                            <select className=" bg-zinc-800/60 px-2 py-2 rounded text-white m-4" name="languageMenu">
                                 <option value="English">English</option>
                                 <option value="Espanol">Espanol</option>
                             </select>
