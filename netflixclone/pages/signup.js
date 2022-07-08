@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { UserAuth } from '../context/AuthContext'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth, db } from '../firebase'
 export default function Signup() {
     const router = useRouter()
 
@@ -22,10 +23,11 @@ export default function Signup() {
 
     }
     
-
-    useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+        if(currentUser) {
             router.push({ pathname: '/listing' }) 
-    }, [user]) 
+        }
+    })
 
     return (
         <>
