@@ -16,18 +16,18 @@ export default function Signup() {
         e.preventDefault()
         try {
             await signUp(email, password)
-
+            onAuthStateChanged(auth, (currentUser) => {
+                if(currentUser) {
+                    router.push({ pathname: '/listing' }) 
+                }
+            })
         } catch (error) {
             setError(error.message)
         }
 
     }
     
-    onAuthStateChanged(auth, (currentUser) => {
-        if(currentUser) {
-            router.push({ pathname: '/listing' }) 
-        }
-    })
+
 
     return (
         <>
