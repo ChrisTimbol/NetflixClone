@@ -27,6 +27,8 @@ export default function Signup() {
         } 
     })
 
+
+
     return (
         <>
             <div className="relative flex items-center justify-center h-100vh  border-b-8 border-stone-600  bg-gradient-to-b ">
@@ -36,8 +38,11 @@ export default function Signup() {
                     <div className="max-w-[450px] h-[600px] mx-auto bg-black/75">
                         <div className="max-w-[320px] mx-auto py-16">
                             <h1 className="text-3xl font-bold text-white" >Sign Up</h1>
+                            { 
+                          
+                            }
                             {error ? <p className='text-red-600 font-bold p-2'>{error}</p> : null}
-
+        
 
                             <form
                                 onSubmit={handleSubmit}

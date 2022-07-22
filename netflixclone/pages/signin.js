@@ -24,7 +24,7 @@ export default function Signin() {
     return (
         <>
             <div className="relative flex items-center justify-center h-100vh bg-gradient-to-b ">
-                <Image className="z-0 " alt="Image" layout='fill' priority objectFit="cover" quality={100} src="/LandingPage/landingBackground.jpg" />
+                <Image className="z-0" alt="Image" layout='fill' priority objectFit="cover" quality={100} src="/LandingPage/landingBackground.jpg" />
                 <div className="bg-black/60 fixed top-0 left-0 w-full h-screen"> </div>
                 <div className="fixed w-full px-4 py-20 ">
                     <div className="max-w-[450px] h-[600px] mx-auto bg-black/75">
@@ -36,7 +36,6 @@ export default function Signin() {
                                 method="post"
                                 className="rounded w-full flex flex-col  login-form text-white py-4 "
                             >
-
                                 <input
                                     onChange={(e) => setEmail(e.target.value)}
                                     className="mb-2 p-4 bg-zinc-700"
@@ -47,16 +46,11 @@ export default function Signin() {
                                     onChange={(e) => setPassword(e.target.value)}
                                     className="p-4 bg-zinc-700"
                                     type="password"
-                                    placeholder="Password" 
+                                    placeholder="Password"
                                     name="password"
                                     autoComplete="password" />
-                                <button
-                                    type="submit"
-                                    value="Submit"
-                                    className=" hover:bg-red-900 cursor-pointer py-3 my-6 text-center rounded font-bold bg-red-600 group"
-                                >Sign In</button>
-
-
+                                <button className=" hover:bg-red-900 cursor-pointer py-3 my-6 text-center rounded font-bold bg-red-600 group" type="submit" value="Submit">
+                                    Sign In</button>
                                 <div className="flex justify-between text-small text-zinc-600">
                                     <label className=""><input type="checkbox" /> Remember me</label>
                                     <p>Need Help?</p>
