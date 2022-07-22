@@ -12,7 +12,7 @@ I built this project to better my knowledge in tailwindcss, firebase and user au
 
   NextJS make it easier to get a project together quick
   - NextJS made datafetching easier thanks to getStaticProps()
-  - Easy page navigation
+  - Easy page navigation ( don't need react-router) , useRouter was useful for redirecting
   - NextJS image optimization was hard to work with for image background
   Firebase 
   - firebase is powerful and can get up and running in minutes 
