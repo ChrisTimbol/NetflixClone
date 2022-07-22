@@ -4,7 +4,6 @@ import { UserAuth } from '../context/AuthContext'
 import { db } from '../firebase'
 import { updateDoc, doc, onSnapshot } from 'firebase/firestore'
 import Image from 'next/image'
-import Link from 'next/link'
 import { AiOutlineClose } from 'react-icons/ai'
 const SavedShows = (props) => {
     const [movies, setMovies] = useState([])

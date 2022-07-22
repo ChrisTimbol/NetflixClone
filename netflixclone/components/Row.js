@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import Image from 'next/image'
-import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import Movie from '../components/Movie'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 function Row(props) {
@@ -35,7 +32,6 @@ function Row(props) {
                 </div>
 
                 <MdChevronRight onClick={slideRight} className="z-50 bg-white right-0 rounded-full absolute opacity-50 hover:opacity-100  hidden cursor-pointer z-10 group-hover:block" size={40} />
-
             </div>
 
         </>

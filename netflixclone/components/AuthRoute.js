@@ -7,9 +7,9 @@ export default function AuthRoute({ children }) {
     const { user } = UserAuth()
     const router = useRouter()
     if (!user) {
-        router.push({ pathname: '/signin'})
+        router.push({ pathname: '/signin'}) // push user to sign in if user is false
     }
     else {
-        return children
+        return children // returns page
     }
 }

@@ -5,10 +5,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <AuthContextProvider> 
-   
        <Navbar /> 
       <Component {...pageProps} />
-   
        </AuthContextProvider>
     </>
   )

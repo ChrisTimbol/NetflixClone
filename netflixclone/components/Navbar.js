@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { UserAuth } from '../context/AuthContext'
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 export default function Navbar() {
     const { user, logOut } = UserAuth()
     const router = useRouter()
+
     const handleLogout = async () => {
         try {
             await logOut()
@@ -22,38 +23,33 @@ export default function Navbar() {
     }
     return (
         <>
-
+            {/* NavBrand Image */}
             <div className="Navbar flex justify-between absolute left-0  cursor-pointer z-10 ">
-                <div 
-                    onClick={handleNetflixClick}
-                    className="navTitle " >
-                    <Image alt="Image" src="/LandingPage/Netflix_Logo_PMS.png" width={200} height={90} />
+                <div className="navTitle" onClick={handleNetflixClick}>
+                    <Image alt="Image" src="/LandingPage/Netflix_Logo_PMS.png" width={200} height={90}/>
                 </div>
             </div>
+
             <div className="linkContainer flex list-none absolute right-0 z-10">
-      
+                {/* Renders different navbar buttons based on user sign in */}
                 {user?.email ? (
                     <>
                         <li className='z-20' >
-                            
-                            <button 
-                                   onClick={handleAccount}
-                                    className=" px-2 py-2 rounded text-white m-4 font-bold hover:text-red-600"> My Fav Shows </button>
+                            <button className=" px-2 py-2 rounded text-white m-4 font-bold hover:text-red-600" onClick={handleAccount} > My Fav Shows </button>
                         </li>
                         <li>
-                           <button onClick={handleLogout} className="bg-red-600 px-6 py-2 rounded text-white m-4 hover:bg-red-900"> Logout</button>
+                           <button className="bg-red-600 px-6 py-2 rounded text-white m-4 hover:bg-red-900" onClick={handleLogout}> Logout</button>
                         </li>
                     </>
                 ) : (
                     <>
                         <li  className="z-20">
-                            <select className=" bg-zinc-800/60 px-2 py-2 rounded text-white m-4" name="languageMenu">
-                                <option value="English">English</option>
-                                <option value="Espanol">Espanol</option>
-                            </select>
+                        <Link href="/listing"><button className="hover:bg-red-900 bg-red-500 px-6 py-2 rounded text-white m-4"> Listings </button></Link>
+
                         </li>
                         <li>
-                            <Link href="/signin"><button className="hover:bg-red-900 bg-red-600 px-6 py-2 rounded text-white m-4"> Sign In</button></Link>
+
+                            <Link href="/signin"><button className="hover:bg-red-900 bg-red-600 px-6 py-2 rounded text-white m-4"> Sign In </button></Link>
                         </li>
                     </>
                 )
