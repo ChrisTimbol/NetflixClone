@@ -7,7 +7,7 @@ import Image from 'next/image'
 import { AiOutlineClose } from 'react-icons/ai'
 const SavedShows = (props) => {
     const [movies, setMovies] = useState([])
-    const { user } = UserAuth()
+    const { user } = UserAuth() // contains users email address if logged in or signed up
 
     const slideLeft = () => {
         var slider = document.getElementById('slider' + props.rowID)
@@ -19,16 +19,22 @@ const SavedShows = (props) => {
     }
 
     useEffect(() => {
+        // creates a document snapshot immediately with the current contents of users by email
         onSnapshot(doc(db, 'users', `${user?.email}`), (doc) => {
+            // sets the movies array from that users email
             setMovies(doc.data()?.savedShows)
         })
+        //only runs when users email changes
     }, [user?.email])
 
     const movieRef = doc(db, 'users', `${user?.email}`)
+
+
     const deleteShow = async (passedID) => {
         try {
-            const result = movies.filter((e) => e.id !== passedID)
-            await updateDoc(movieRef, {
+            const result = movies.filter((e) => e.id !== passedID) // filters out show from movies array/state
+           
+            await updateDoc(movieRef, { // updates the movieRef field in fb
                 savedShows: result,
             })
         } catch (error) {
@@ -41,15 +47,12 @@ const SavedShows = (props) => {
             <h2 className="text-white font-bold md:text-xl p-4"> My Saved Shows</h2>
             <div className="relative flex items-center group">
                 <MdChevronLeft
-                    onClick={slideLeft}
                     className="z-50 bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 hidden cursor-pointer z-10 group-hover:block"
+                    onClick={slideLeft}
                     size={40}
                 />
 
-                <div
-                    className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth no-scrollbar scrollbar-hide relative "
-                    id={'slider' + props.rowID}
-                >
+                <div className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth no-scrollbar scrollbar-hide relative " id={'slider' + props.rowID}>
                     {movies.map((e, i) => (
                         <div key={i} className="z-0 hover:z-10 hover:scale-125 w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative px-1 ">
                             <Image 

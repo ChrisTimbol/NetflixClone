@@ -14,7 +14,9 @@ export function AuthContextProvider({children}) {
     const [user, setUser] = useState({})
 
     function signUp( email, password) {
-        createUserWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password).catch(function(error) {
+            alert(error.message)
+        })
         setDoc(doc(db, 'users', email), { // create new db for each user created
             savedShows: []
         })
@@ -28,8 +30,9 @@ export function AuthContextProvider({children}) {
     }  
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser)=> {
-            setUser(currentUser)
+        // observer for changes when users sign in/out
+        const unsubscribe = onAuthStateChanged(auth, (currentUser)=> { 
+            setUser(currentUser) // setting state to the currentUser signe in to db
         })
         return () => {
             unsubscribe();
@@ -38,7 +41,7 @@ export function AuthContextProvider({children}) {
 
     
     return (
-        <AuthContext.Provider value={{ signUp, logIn, logOut, user }}>
+        <AuthContext.Provider value={{ signUp, logIn, logOut, user}}>
             {children}
         </AuthContext.Provider>
     )
