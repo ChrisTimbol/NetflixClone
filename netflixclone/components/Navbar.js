@@ -44,7 +44,7 @@ export default function Navbar() {
                 ) : (
                     <>
                         <li  className="z-20">
-                        <Link href="/listing"><button className="hover:bg-red-900 bg-red-500 px-6 py-2 rounded text-white m-4"> Listings </button></Link>
+                        <Link href="/listing"><button className=" px-6 py-2 rounded text-white m-4"> Listings </button></Link>
 
                         </li>
                         <li>
