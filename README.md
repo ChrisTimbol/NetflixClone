@@ -24,14 +24,15 @@ I built this project to better my knowledge in tailwindcss, firebase and user au
  - TailwindCSS
  
 ## Screenshots
-![shoppercart1](https://user-images.githubusercontent.com/23703863/180578617-548297ff-3a19-4aae-a5a7-0788de7f0915.png)
-![shoppercart2](https://user-images.githubusercontent.com/23703863/180578746-3ce962e9-549a-45e6-b0b1-9299b789b272.png)
+![Screen1](https://user-images.githubusercontent.com/23703863/180578853-47f0b0f0-ef42-433d-9afc-fca88f4e589d.png)
+![Screen2](https://user-images.githubusercontent.com/23703863/180578856-3ee382a1-3f23-48f8-b88f-1400bf042c28.png)
+![Screen3](https://user-images.githubusercontent.com/23703863/180578859-161095cc-6e6f-46ab-983a-14d53817ad17.png)
 
 
 
 ## How to use?
 
-#### Check out live site at https://shopper-cart.vercel.app/
+#### Check out live site at https://chrisnetflixclone.vercel.app/
 #### or 
 
 You will need [Node.js](https://nodejs.org) version 8.0 or greater installed on your system.
