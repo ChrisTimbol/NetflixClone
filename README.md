@@ -2,7 +2,7 @@
 A Netflix-like application that displays movies by section, with full user authentication, once users are logged in they can 'like' shows to add to there favorite show listing!
 
 ## Motivation
-I built this project mainly to better my knowledge in tailwindcss, firebase and user authentication. 
+I built this project to better my knowledge in tailwindcss, firebase and user authentication. 
 
 ## Screenshots
 ![Screen1](https://user-images.githubusercontent.com/23703863/180576120-1d9646c8-a37c-4404-a5a7-dcb879454bd8.png)
@@ -10,10 +10,13 @@ I built this project mainly to better my knowledge in tailwindcss, firebase and 
 ![Screen3](https://user-images.githubusercontent.com/23703863/180576130-7aebe3ea-8b0b-4b9b-9bcb-900eaaa9aee0.png)
 ![Screen4](https://user-images.githubusercontent.com/23703863/180576136-3f536b8b-a760-43ab-b9c9-e8ea47579468.png)
 
+## Framework Used
+
+#### Built with React, NextJS, TailwindCSS
 
 ## Getting Started
 
-#### Check out live site at [https://chrisnetflixclone.vercel.app/]
+#### Check out live site at https://chrisnetflixclone.vercel.app/
 #### or 
 
 You will need [Node.js](https://nodejs.org) version 8.0 or greater installed on your system.
