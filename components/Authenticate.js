@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 
-// User Signup/Signin
+// User Signup/Signin layout
 export default function Authenticate(props) {
     const router = useRouter()
-    const [email, setEmail] = useState('')
+/*     const [email, setEmail] = useState('') */
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
-    const { user, logIn, signUp } = UserAuth()
+    const { user, logIn, signUp, email, setEmail } = UserAuth()
 
     // When Sign button is clicked login/signup to firebase 
     const handleSubmit = async (e) => {
@@ -19,7 +19,6 @@ export default function Authenticate(props) {
         if (user) {
             try {
                 await logIn(email, password)
-                router.push({ pathname: '/listing' })
             } catch (error) {
      
                 alert(error.message)
@@ -34,9 +33,12 @@ export default function Authenticate(props) {
                           setError(error.message) 
             }
         }
-        
+        router.push({ pathname: '/listing' })
     }
 
+    useEffect(() => {
+
+    }, [])
     return (
         <div className="PageContainer relative flex items-center justify-center h-100vh  border-b-8 border-stone-600  bg-gradient-to-b ">
 
@@ -54,9 +56,8 @@ export default function Authenticate(props) {
                             <input className="mb-2 p-3 bg-zinc-700"
                                 onChange={(e) => setEmail(e.target.value)}
                                 type="email"
-                                placeholder="Email Address"
-                                autoComplete="email"
-                                name="email"
+                                value={email}
+                                autoComplete="off"
                                 text={email}
                             />
                             <input
@@ -64,7 +65,7 @@ export default function Authenticate(props) {
                                 onChange={(e) => setPassword(e.target.value)}
                                 type="password"
                                 placeholder="Password"
-                                autoComplete="current-password"
+                                autoComplete="off"
                             />
                             <button className=" hover:bg-red-900 cursor-pointer py-3 my-6 text-center rounded font-bold bg-red-600 group" type="submit" value="Submit">
                                 Sign Up
