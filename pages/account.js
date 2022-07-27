@@ -1,8 +1,4 @@
-import { UserAuth } from '../context/AuthContext'
-import { useRouter } from 'next/router'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
 import Image from 'next/image'
-import Link from 'next/link'
 import AuthRoute from '../components/AuthRoute'
 import SavedShows from '../components/SavedShows'
 

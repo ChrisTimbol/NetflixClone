@@ -3,11 +3,11 @@ import Image from 'next/image'
 import StoryCard from '../components/StoryCard'
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
-
+import { UserAuth } from '../context/AuthContext'
 export default function Home(props) {
 
   const router = useRouter() 
-
+  const { setEmail } = UserAuth()
   const handleSubmit = (e) => {
     e.preventDefault()
     router.push({ pathname: '/signup' })
