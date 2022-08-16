@@ -22,12 +22,13 @@ function Row(props) {
                 />
 
                 <div
-                    className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth no-scrollbar scrollbar-hide relative "
+                    className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth no-scrollbar relative "
                     id={'slider' + props.rowID}
+                    
                 >
                     {props.movies.map((e, i) => (
                    
-                        <Movie key={i} e={e} i={i} />
+                        <Movie className="z-20" key={i} e={e} i={i} />
                     ))}
                 </div>
 
