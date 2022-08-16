@@ -39,6 +39,8 @@ You will need [Node.js](https://nodejs.org) version 8.0 or greater installed on 
 ```
 npm install
 ```
+need firebase API keys added to use this project
+
 Run the development server.
 ```bash
 npm run dev
