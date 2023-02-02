@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 // User Signup/Signin layout
 export default function Authenticate(props) {
     const router = useRouter()
-/*     const [email, setEmail] = useState('') */
+    /*     const [email, setEmail] = useState('') */
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const { user, logIn, signUp, email, setEmail } = UserAuth()
@@ -20,17 +20,17 @@ export default function Authenticate(props) {
             try {
                 await logIn(email, password)
             } catch (error) {
-     
+
                 alert(error.message)
-                    setError(error.message) 
+                setError(error.message)
             }
         } else {
             try {
                 await signUp(email, password)
 
             } catch (error) {
-                            alert(error.message)
-                          setError(error.message) 
+                alert(error.message)
+                setError(error.message)
             }
         }
         router.push({ pathname: '/listing' })

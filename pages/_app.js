@@ -4,10 +4,10 @@ import { AuthContextProvider } from '../context/AuthContext'
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <AuthContextProvider> 
-       <Navbar /> 
-      <Component {...pageProps} />
-       </AuthContextProvider>
+      <AuthContextProvider>
+        <Navbar />
+        <Component {...pageProps} />
+      </AuthContextProvider>
     </>
   )
 }
