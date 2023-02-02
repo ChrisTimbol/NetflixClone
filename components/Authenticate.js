@@ -7,18 +7,17 @@ import { useRouter } from 'next/router'
 
 // User Signup/Signin layout
 export default function Authenticate(props) {
-    const router = useRouter()
-    /*     const [email, setEmail] = useState('') */
+    const router = useRouter() /* use to navigate page onclick of submit */
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const { user, logIn, signUp, email, setEmail } = UserAuth()
 
     // When Sign button is clicked login/signup to firebase 
     const handleSubmit = async (e) => {
-        e.preventDefault()
-        if (user) {
+        e.preventDefault() /* stop page submission */
+        if (user) { /*  */
             try {
-                await logIn(email, password)
+                await logIn(email, password) 
             } catch (error) {
 
                 alert(error.message)

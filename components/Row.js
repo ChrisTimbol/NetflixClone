@@ -1,7 +1,10 @@
 import Movie from '../components/Movie'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
+
+/* Row of movies  */
 function Row(props) {
 
+    //Sliders
     const slideLeft = () => {
         var slider = document.getElementById('slider' + props.rowID)
         slider.scrollLeft = slider.scrollLeft - 500

@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import StoryCard from '../components/StoryCard'
-import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import { UserAuth } from '../context/AuthContext'
 export default function Home(props) {
@@ -16,7 +15,7 @@ export default function Home(props) {
 
 
   return (
-    <div>
+    <div> {/* landing page */}
       <Head>
         <title>Netflix Clone</title>
         <meta name="description" content="Netflix Clone Project" />

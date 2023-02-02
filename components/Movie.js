@@ -14,8 +14,8 @@ export default function Movie(props) {
     const saveShow = async () => {
         if (user?.email) {
           setLike(!like) // like icon
-          setSaved(true)
-          await updateDoc(movieID, {
+          setSaved(true) // Add to save state
+          await updateDoc(movieID, { // Update doc
             savedShows: arrayUnion({
               id: props.e.id,
               title: props.e.title,

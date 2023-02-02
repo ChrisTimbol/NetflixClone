@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-// Displays a random movie from the movie api as the header
+// Displays a random movie from the movie api as the 'HeroSection'
 export default function ListingHeader(props) {
 
     const [movies, setMovies] = useState([])
-    // a random movie based on the movies Array
-    const movie = movies[Math.floor(Math.random() * movies.length)]
-    let image
+  
+    const movie = movies[Math.floor(Math.random() * movies.length)] // Random movie generator
+    let image 
 
     useEffect(() => {
         setMovies(props.movie) // set movies to the movie array passed in since data fetching can only be on page and not in a component
@@ -39,7 +39,7 @@ export default function ListingHeader(props) {
                 </div>
                 <p className='text-gray-400 text-sm'> Released: {movie?.release_date}</p>
                 <p className="w-full md:max-w-[70%] lg:max-w-[50%] xl:max-w-[35%] text-gray-200">
-                    {truncateString(movie?.overview, 150)}
+                    {truncateString(movie?.overview, 150)} {/* Cut movie string if to long */}
                 </p>
             </div>
         </div>
