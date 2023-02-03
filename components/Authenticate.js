@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 
-// User Signup/Signin layout
+// User Signup/Signin Page
 export default function Authenticate(props) {
     const router = useRouter() /* use to navigate page onclick of submit */
     const [password, setPassword] = useState('')
@@ -15,7 +15,7 @@ export default function Authenticate(props) {
     // When Sign button is clicked login/signup to firebase 
     const handleSubmit = async (e) => {
         e.preventDefault() /* stop page submission */
-        if (user) { /*  */
+        if (user) { /* If user then try and authenticate else return sign up page */
             try {
                 await logIn(email, password) 
             } catch (error) {
@@ -32,12 +32,9 @@ export default function Authenticate(props) {
                 setError(error.message)
             }
         }
-        router.push({ pathname: '/listing' })
+        router.push({ pathname: '/listing' }) /* Pushin listing but dont allow user to like */
     }
 
-    useEffect(() => {
-
-    }, [])
     return (
         <div className="PageContainer relative flex items-center justify-center h-100vh  border-b-8 border-stone-600  bg-gradient-to-b ">
 
@@ -49,6 +46,7 @@ export default function Authenticate(props) {
 
                         <h1 className="text-3xl font-bold text-white" >{props.title}</h1>
 
+                        {/* error returned if invalid login */}
                         {error ? <p className='text-red-600 font-bold p-2'>{error}</p> : null} {/* displays error message in red */}
 
                         <form className="rounded w-full flex flex-col  login-form text-white py-4 " onSubmit={handleSubmit}>

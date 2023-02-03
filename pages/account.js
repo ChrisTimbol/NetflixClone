@@ -2,6 +2,7 @@ import Image from 'next/image'
 import AuthRoute from '../components/AuthRoute'
 import SavedShows from '../components/SavedShows'
 
+/* Account page with movies liked */
 export default function Account() {
 
 
@@ -15,7 +16,7 @@ export default function Account() {
                         <h1 className="text-3xl md:text-5xl font-bold">My Shows</h1>
                     </div>
                 </div>
-                <SavedShows />
+                <SavedShows /> {/* Saved shows that was liked */}
             </div>
         </AuthRoute>
     )

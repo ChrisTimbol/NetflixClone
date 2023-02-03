@@ -3,6 +3,9 @@ import Image from 'next/image'
 import StoryCard from '../components/StoryCard'
 import { useRouter } from 'next/router'
 import { UserAuth } from '../context/AuthContext'
+
+
+/* Landing page with email sign up */
 export default function Home(props) {
 
   const router = useRouter() 

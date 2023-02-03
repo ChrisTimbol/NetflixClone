@@ -1,4 +1,6 @@
 import Authenticate from '../components/Authenticate'
+
+/* The Signup Page */
 export default function Signup() {
 
     return <Authenticate 

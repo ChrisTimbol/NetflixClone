@@ -1,5 +1,6 @@
 import Authenticate from '../components/Authenticate'
 
+/* The Signin Page */
 export default function Signin() {
 
 
