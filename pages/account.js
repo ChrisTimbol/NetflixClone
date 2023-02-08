@@ -2,11 +2,9 @@ import Image from 'next/image'
 import AuthRoute from '../components/AuthRoute'
 import SavedShows from '../components/SavedShows'
 
-/* Account page with movies liked */
+/* Account page where 'liked' movies are displayed */
+// Wrapped in AuthRoute 
 export default function Account() {
-
-
-
     return (
         <AuthRoute>
             <div className="bg-black min-h-screen w-full">

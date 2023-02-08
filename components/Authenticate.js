@@ -19,7 +19,6 @@ export default function Authenticate(props) {
             try {
                 await logIn(email, password) 
             } catch (error) {
-
                 alert(error.message)
                 setError(error.message)
             }
@@ -45,7 +44,7 @@ export default function Authenticate(props) {
                     <div className="InputContainer max-w-[320px] mx-auto py-16">
 
                         <h1 className="text-3xl font-bold text-white" >{props.title}</h1>
-
+                        
                         {/* error returned if invalid login */}
                         {error ? <p className='text-red-600 font-bold p-2'>{error}</p> : null} {/* displays error message in red */}
 

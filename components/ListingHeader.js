@@ -13,7 +13,7 @@ export default function ListingHeader(props) {
         setMovies(props.movie) // set movies to the movie array passed in since data fetching can only be on page and not in a component
     }, [])
 
-    // trim movie description
+    // trim movie description just in case its to long
     const truncateString = (str, num) => {
         if (str?.length > num) {
             return str.slice(0, num) + "..."

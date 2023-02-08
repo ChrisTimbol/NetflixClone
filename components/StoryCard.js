@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-// Story cards for the index landing page
+// Story Cards for the landing page when you scroll down
 export default function StoryCard(props) {
   return (
     <div className=" text-center  border-b-8 border-stone-600  bg-black ">

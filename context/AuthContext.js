@@ -14,6 +14,8 @@ const AuthContext = createContext() /* Context for login authentication */
 export function AuthContextProvider({children}) {
     const [user, setUser] = useState({}) // set when user is authenticated.
     const [email, setEmail] = useState("")
+
+    // takes email, password at signup and uses firebase authentication to sign up
     function signUp( email, password) {
         createUserWithEmailAndPassword(auth, email, password).catch(function(error) {
             alert(error.message)

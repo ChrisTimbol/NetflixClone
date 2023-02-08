@@ -1,10 +1,10 @@
 import Movie from '../components/Movie'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 
-/* Row of movies  */
+/* Row format for movie spacing w/ titles etc */
 function Row(props) {
 
-    //Sliders
+    // Allows uer to iterate through movies
     const slideLeft = () => {
         var slider = document.getElementById('slider' + props.rowID)
         slider.scrollLeft = slider.scrollLeft - 500
@@ -16,8 +16,12 @@ function Row(props) {
 
     return (
         <>
+            {/* Title of Type */}
             <h2 className="text-white font-bold md:text-xl p-4">{props.title}</h2>
+
+
             <div className="relative flex items-center group">
+                {/* Arrows for iterating through movie selection */}
                 <MdChevronLeft
                     onClick={slideLeft}
                     className="z-50 bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 hidden cursor-pointer z-10 group-hover:block"
@@ -29,6 +33,7 @@ function Row(props) {
                     id={'slider' + props.rowID}
                     
                 >
+                    {/* Map movies into the row */}
                     {props.movies.map((e, i) => (
                    
                         <Movie className="z-20" key={i} e={e} i={i} />

@@ -3,6 +3,7 @@ import Row from '../components/Row'
 import requests from '../apiRequest/requests'
 
 //Prerenders data at build time
+// getStaticprops allows rendered page to use the available data at build time ahead of user request
 export async function getStaticProps() {
     const res1 = await fetch(requests.popular)
     const post1 = await res1.json()

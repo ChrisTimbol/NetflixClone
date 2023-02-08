@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { UserAuth } from '../context/AuthContext'
 import { useRouter } from 'next/router'
 
+/* Simple Navbar with Netflix login/logout link */
 export default function Navbar() {
     const { user, logOut } = UserAuth()
     const router = useRouter()
