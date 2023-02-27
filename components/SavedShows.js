@@ -5,6 +5,8 @@ import { db } from '../firebase'
 import { updateDoc, doc, onSnapshot } from 'firebase/firestore'
 import Image from 'next/image'
 import { AiOutlineClose } from 'react-icons/ai'
+
+
 const SavedShows = (props) => {
     const [movies, setMovies] = useState([])
     const { user } = UserAuth() // contains users email address if logged in or signed up

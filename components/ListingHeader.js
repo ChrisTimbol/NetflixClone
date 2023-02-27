@@ -5,7 +5,6 @@ import Image from 'next/image'
 export default function ListingHeader(props) {
 
     const [movies, setMovies] = useState([])
-  
     const movie = movies[Math.floor(Math.random() * movies.length)] // Random movie generator
     let image 
 

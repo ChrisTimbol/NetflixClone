@@ -16,9 +16,12 @@ export default function Navbar() {
             console.log(error)
         } 
     }
+    
     const handleAccount = () => {
         router.push({ pathname: '/account'})
     }
+
+    /* Send user to listing page */
     const handleNetflixClick = () => {
         router.push({ pathname: '/listing'})
     }

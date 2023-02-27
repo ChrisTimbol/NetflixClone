@@ -15,6 +15,16 @@ export function AuthContextProvider({children}) {
     const [user, setUser] = useState({}) // set when user is authenticated.
     const [email, setEmail] = useState("")
 
+    useEffect(() => {
+        // observer for changes when users sign in/out
+        const unsubscribe = onAuthStateChanged(auth, (currentUser)=> { 
+            setUser(currentUser) // setting state to the currentUser signed in to db
+        })
+        return () => {
+            unsubscribe();
+        }
+    })
+
     // takes email, password at signup and uses firebase authentication to sign up
     function signUp( email, password) {
         createUserWithEmailAndPassword(auth, email, password).catch(function(error) {
@@ -35,19 +45,10 @@ export function AuthContextProvider({children}) {
         return signOut(auth)
     }  
 
-    useEffect(() => {
-        // observer for changes when users sign in/out
-        const unsubscribe = onAuthStateChanged(auth, (currentUser)=> { 
-            setUser(currentUser) // setting state to the currentUser signed in to db
-        })
-        return () => {
-            unsubscribe();
-        }
-    })
 
     
     return (
-        <AuthContext.Provider value={{ signUp, logIn, logOut, user, email, setEmail}}> {/* 'Provides' these value to whoever is using the 'AuthContext' */}
+        <AuthContext.Provider value={{ signUp, logIn, logOut, user, email, setEmail}}> {/* Provides these value to children using the AuthContext */}
             {children}
         </AuthContext.Provider>
     )

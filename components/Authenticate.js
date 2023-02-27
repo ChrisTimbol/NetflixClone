@@ -9,7 +9,7 @@ import { useRouter } from 'next/router'
 export default function Authenticate(props) {
     const router = useRouter() /* use to navigate page onclick of submit */
     const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
+    const [error, setError] = useState('') // error msg from firebase
     const { user, logIn, signUp, email, setEmail } = UserAuth()
 
     // When Sign button is clicked login/signup to firebase 
