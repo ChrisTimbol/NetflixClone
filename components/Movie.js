@@ -37,7 +37,7 @@ export default function Movie(props) {
                 <Image layout='responsive' width={240} height={160} quality={100} alt={props.e?.title} priority={true} src={`https://image.tmdb.org/t/p/w500/${props.e?.backdrop_path}`} />
                
                {/*hover background */}
-                <div className='flex justify-center items-center absolute bottom-0  top-0 left-0 right-0 hover:bg-black/80 hover:opacity-80 opacity-0 text-white'>
+                <div className='flex justify-center items-center absolute bottom-0 mx-1  top-0 left-0 right-0 hover:bg-black/80 hover:opacity-80 opacity-0 text-white'>
                     
                     {/* Displays title in center of movie */}
                     <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center text-center  h-full w-full ">
@@ -45,7 +45,7 @@ export default function Movie(props) {
                     </p>
 
                     <p onClick={saveShow}> {/* If user clicks heart save to DB*/}
-                      {like ? <FaHeart className='absolute top-6 left-5 text-red-500 ' /> :<FaRegHeart className='absolute top-6 w-3 left-5 text-gray-300' />}
+                      {like ? <FaHeart  className='absolute top-2 left-5 text-red-500 text-5xl'/> :<FaRegHeart  className='absolute top-2 left-5 text-gray-300 text-5xl' />}
                     </p>
                 </div>
             </div>
